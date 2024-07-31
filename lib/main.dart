@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:spotify_clone/config/theme/apptheme.dart';
 import 'package:spotify_clone/screens/mode_choose/bloc/theme_cubit.dart';
-import 'package:spotify_clone/screens/signinorsignup.dart';
+
 import 'package:spotify_clone/screens/splashscreen.dart';
 import 'package:path_provider/path_provider.dart'; // Import path_provider
 

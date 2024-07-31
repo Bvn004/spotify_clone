@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1024500234479",
-    "project_id": "project-spotify-83d9f",
-    "storage_bucket": "project-spotify-83d9f.appspot.com"
+    "project_number": "338020247567",
+    "project_id": "keda-d9c75",
+    "storage_bucket": "keda-d9c75.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024500234479:android:4900c6c56903c414ad831a",
+        "mobilesdk_app_id": "1:338020247567:android:26b2f3074646ad8fbbdb7a",
         "android_client_info": {
-          "package_name": "com.example.app"
+          "package_name": "com.example.spot"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBrnhAHjLOAzcofCBZj6-VcMEraQyHoWqg"
+          "current_key": "AIzaSyB6Dzs6HvUlpy5IRNj4KqUExSaRQPrxXb0"
         }
       ],
       "services": {
@@ -26,15 +26,15 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024500234479:android:1543c69f7c3e6c0dad831a",
+        "mobilesdk_app_id": "1:338020247567:android:81ef225c72c7c553bbdb7a",
         "android_client_info": {
-          "package_name": "com.spotifyclone007.app"
+          "package_name": "com.example.spotifywithoutfire"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBrnhAHjLOAzcofCBZj6-VcMEraQyHoWqg"
+          "current_key": "AIzaSyB6Dzs6HvUlpy5IRNj4KqUExSaRQPrxXb0"
         }
       ],
       "services": {

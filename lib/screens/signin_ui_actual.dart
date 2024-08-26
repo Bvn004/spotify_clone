@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/auth/servicelocator.dart';
+import 'package:spotify_clone/auth/signin_user_req.dart';
+import 'package:spotify_clone/auth/usecase/auth/signin.dart';
 import 'package:spotify_clone/butttons/button.dart';
 import 'package:spotify_clone/config/appbar/appbar.dart';
-import 'package:spotify_clone/screens/signin_ui_actual.dart';
+import 'package:spotify_clone/screens/rootpage.dart';
 import 'package:spotify_clone/screens/signup-register.dart';
 
 class SigninUiActual extends StatelessWidget {
   SigninUiActual({super.key});
 
-  final TextEditingController _fullName = TextEditingController();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
@@ -40,7 +42,28 @@ class SigninUiActual extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Primarybutton(onpressed: () {}, text: 'Sign In'),
+            Primarybutton(
+                onpressed: () async {
+                  var result = await sl<Signinusecase>().call(
+                      params: SigninUserReq(
+                          Email: _email.text.toString(),
+                          Password: _password.text.toString()));
+
+                  result.fold(
+                    (l) {
+                      var snackbar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                    },
+                    (r) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Rootpage()),
+                          (route) => false);
+                    },
+                  );
+                },
+                text: 'Sign In'),
           ],
         ),
       ),

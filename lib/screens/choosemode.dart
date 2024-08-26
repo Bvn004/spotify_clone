@@ -61,7 +61,12 @@ class _ChoosemodeState extends State<Choosemode> {
                                 color: Color.fromARGB(255, 79, 79, 79)
                                     .withOpacity(0.5),
                                 borderRadius: BorderRadius.circular(40)),
-                            child: SvgPicture.asset("assets/vectors/Moon.svg"),
+                            child: SvgPicture.asset(
+                              "assets/vectors/Moon.svg",
+                              width: 50,
+                              height: 50,
+                              fit: BoxFit.none,
+                            ),
                           ),
                         ),
                       ),
@@ -83,7 +88,12 @@ class _ChoosemodeState extends State<Choosemode> {
                                 color: Color.fromARGB(255, 79, 79, 79)
                                     .withOpacity(0.5),
                                 borderRadius: BorderRadius.circular(40)),
-                            child: SvgPicture.asset("assets/vectors/Sun 1.svg"),
+                            child: SvgPicture.asset(
+                              "assets/vectors/Sun 1.svg",
+                              width: 30,
+                              height: 30,
+                              fit: BoxFit.none,
+                            ),
                           ),
                         ),
                       ),

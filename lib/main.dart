@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:spotify_clone/auth/servicelocator.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,9 @@ Future<void> main() async {
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  ); // Set the HydratedBloc storage
+  );
+
+  await initializeDependencies(); // Set the HydratedBloc storage
   runApp(const MyApp()); // Run the MyApp widget
 }
 

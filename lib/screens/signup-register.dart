@@ -1,7 +1,13 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spotify_clone/auth/createuserreq.dart';
+import 'package:spotify_clone/auth/servicelocator.dart';
+import 'package:spotify_clone/auth/usecase/auth/signup.dart';
 import 'package:spotify_clone/butttons/button.dart';
 import 'package:spotify_clone/config/appbar/appbar.dart';
+import 'package:spotify_clone/screens/rootpage.dart';
 import 'package:spotify_clone/screens/signin_ui_actual.dart';
 
 class SignupPage extends StatelessWidget {
@@ -43,7 +49,29 @@ class SignupPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Primarybutton(onpressed: () {}, text: 'Create Account'),
+            Primarybutton(
+                onpressed: () async {
+                  var result = await sl<Signupusecase>().call(
+                      params: Createuserreq(
+                          Fullname: _fullName.text.toString(),
+                          Email: _email.text.toString(),
+                          Password: _password.text.toString()));
+
+                  result.fold(
+                    (l) {
+                      var snackbar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                    },
+                    (r) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Rootpage()),
+                          (route) => false);
+                    },
+                  );
+                },
+                text: 'Create Account'),
           ],
         ),
       ),
